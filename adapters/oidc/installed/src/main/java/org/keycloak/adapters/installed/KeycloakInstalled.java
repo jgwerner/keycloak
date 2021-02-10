@@ -197,7 +197,7 @@ public class KeycloakInstalled {
         CallbackListener callback = new CallbackListener();
         callback.start();
 
-        String redirectUri = String.format("http://%s:%s", getListenHostname(), callback.getLocalPort());
+        String redirectUri = String.format("https://%s:%s", getListenHostname(), callback.getLocalPort());
         String state = UUID.randomUUID().toString();
         Pkce pkce = deployment.isPkce() ? generatePkce() : null;
 
